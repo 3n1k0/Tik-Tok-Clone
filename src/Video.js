@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./Video.css";
+import './VideoFooter.js'
 
 function Video() {
+  const [playing, setPlaying] = useState(false);
+  const videoRef = useRef(null);
+
+  const onVideoPress = () => {
+    if (playing) {
+      videoRef.current.pause();
+      setPlaying(false);
+    } else {
+      videoRef.current.play();
+      setPlaying(true);
+    }
+  };
+
   return (
     <div className="video">
-      <video className="video__player"
-        src="https://v16m.tiktokcdn.com/b017616c6aa294364a337879d57ed892/5f379ba0/video/tos/useast2a/tos-useast2a-ve-0068c003/e11259332bb14dd69b7d13b61cdfac39/?a=1233&amp;br=3766&amp;bt=1883&amp;cr=0&amp;cs=0&amp;dr=0&amp;ds=3&amp;er=&amp;l=202008130823590101890730771E019078&amp;lr=tiktok_m&amp;mime_type=video_mp4&amp;qs=0&amp;rc=amY7NGR4Ozo6dTMzOjczM0ApOThmaDc7Ojw7NzxpODRkNWdiMWguLzFvZGVfLS0vMTZzczBhX2EtLzEwL15jMjAuMC86Yw%3D%3D&amp;vl=&amp;vr="
+      <video
+        loop
+        onClick={onVideoPress}
+        ref={videoRef}
+        className="video__player"
+        src="https://v16m.tiktokcdn.com/116f75cfd14872478794d1f860ad651b/5f3feba4/video/tos/useast2a/tos-useast2a-pve-0068/eeaa792c9de44035aea27c95ab0772b2/?a=1233&br=1412&bt=706&cr=0&cs=0&dr=0&ds=3&er=&l=20200819154331010189074012461F200B&lr=tiktok_m&mime_type=video_mp4&qs=0&rc=MzVwb2w3dmpudjMzZjczM0ApZWloaDo8ZDxnNzxoNGdpO2dfNWxwZS5rcDNfLS1jMTZzczYzX18yXzVgNS4tXmA1Li86Yw%3D%3D&vl=&vr="
       ></video>
       {/* <VideoFooter />
             <VideoSidebar/> */}

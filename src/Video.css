@@ -4,6 +4,7 @@
   height: 100%;
   width: 100%;
   scroll-snap-align: start;
+  border-radius: 20px;
 }
 
 .video__player {
@@ -11,4 +12,5 @@
     object-fit: fill;
     width: 100%;
     height: 100%;
+    border-radius: 20px;
 }

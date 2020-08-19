@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
-import Video from './Video.js'
-import  './Video.css'
+import Video from "./Video.js";
+import "./Video.css";
+import VideoFooter from "./VideoFooter";
+
 
 function App() {
   return (
-
     <div className="app">
       <h1>Helooo</h1>
       <div className="app__videos">
@@ -13,6 +14,7 @@ function App() {
         <Video />
         <Video />
         <Video />
+        <VideoFooter />
       </div>
     </div>
   );
