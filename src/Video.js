@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import "./Video.css";
-import './VideoFooter.js'
+import "./VideoFooter.js";
+import VideoFooter from "./VideoFooter.js";
+import VideoSidebar from './VideoSidebar'
 
 function Video() {
   const [playing, setPlaying] = useState(false);
@@ -23,10 +25,14 @@ function Video() {
         onClick={onVideoPress}
         ref={videoRef}
         className="video__player"
-        src="https://v16m.tiktokcdn.com/116f75cfd14872478794d1f860ad651b/5f3feba4/video/tos/useast2a/tos-useast2a-pve-0068/eeaa792c9de44035aea27c95ab0772b2/?a=1233&br=1412&bt=706&cr=0&cs=0&dr=0&ds=3&er=&l=20200819154331010189074012461F200B&lr=tiktok_m&mime_type=video_mp4&qs=0&rc=MzVwb2w3dmpudjMzZjczM0ApZWloaDo8ZDxnNzxoNGdpO2dfNWxwZS5rcDNfLS1jMTZzczYzX18yXzVgNS4tXmA1Li86Yw%3D%3D&vl=&vr="
+        src="https://v16m.tiktokcdn.com/745ec6c01d86733745bc3895eda51fdf/5f42c6c2/video/tos/useast2a/tos-useast2a-pve-0068/cbfef1c233dd4d0798b89f3536089320/?a=1233&br=4168&bt=2084&cr=0&cs=0&dr=0&ds=3&er=&l=20200821194257010190208021243FFE42&lr=tiktok_m&mime_type=video_mp4&qs=0&rc=anRoeTY8eDc8djMzNTczM0ApZWk0ZWQ5OztlNzY3OGdlNmczbGNpMnFsZF9fLS1iMTZzcy5jNmNiXjVgMTIxNDBeLjE6Yw%3D%3D&vl=&vr="
       ></video>
-      {/* <VideoFooter />
-            <VideoSidebar/> */}
+      <VideoFooter
+        channel="anniekostolany"
+        description="check this out"
+        song="neoton familia"
+      />
+      <VideoSidebar likes={111} messages={222} shares={333} />
     </div>
   );
 }

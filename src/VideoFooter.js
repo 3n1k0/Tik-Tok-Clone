@@ -1,13 +1,26 @@
 import React from "react";
-import './VideoFooter.css';
+import "./VideoFooter.css";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import Ticker from "react-ticker";
+import MusicNoteIcon from "@material-ui/icons/MusicNote";
 
-function VideoFooter() {
+function VideoFooter({ channel, description, song }) {
   return (
     <div className="videoFooter">
-              <div className="videoFooter__text">
-
-              </div>
-      <h2>I am a footer</h2>
+      <div className="videoFooter__text">
+        <h3>@{channel}</h3>
+        <p>{description}</p>
+        <div className="videoFooter__ticker">
+          <MusicNoteIcon />
+          <Ticker mode="smooth">
+            {({ index }) => (
+              <>
+                <p>{song}</p>
+              </>
+            )}
+          </Ticker>
+        </div>
+      </div>
       <img
         className="videoFooter__record"
         src="https://static.thenounproject.com/png/934821-200.png"

@@ -13,8 +13,6 @@ function App() {
         <Video />
         <Video />
         <Video />
-        <Video />
-        <VideoFooter />
       </div>
     </div>
   );
